@@ -1,0 +1,15 @@
+{
+	"name": "proxmox.node",
+	"type": "object",
+	"description": "Proxmox node.",
+  "inputs": {
+    "proxmox": {
+      "type": "proxmox"
+    }
+  },
+	"outputs": {
+		"node": {
+			"type": "proxmox.node"
+		}
+	}
+}
