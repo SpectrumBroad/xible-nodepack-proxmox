@@ -1,6 +1,6 @@
 {
 	"name": "proxmox.qemu.clone",
-	"type": "object",
+	"type": "action",
 	"description": "Clones a proxmox QEMU node or template.",
   "inputs": {
     "trigger": {
