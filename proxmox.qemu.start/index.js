@@ -12,6 +12,9 @@ module.exports = function(NODE) {
 			Promise.all(qemus.map((qemu) => qemu.start()))
 				.then(() => {
 					doneOut.trigger(state);
+				})
+				.catch((err) => {
+					NODE.fail('' + err, state);
 				});
 
 		});
