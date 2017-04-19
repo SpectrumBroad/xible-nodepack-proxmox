@@ -14,7 +14,7 @@ module.exports = function(NODE) {
 					doneOut.trigger(state);
 				})
 				.catch((err) => {
-					NODE.fail('' + err, state);
+					NODE.error(err, state);
 				});
 
 		});
