@@ -1,0 +1,6 @@
+{
+  "proxmox.qemu": {
+    "color": "orangered",
+    "extends": "object"
+  }
+}

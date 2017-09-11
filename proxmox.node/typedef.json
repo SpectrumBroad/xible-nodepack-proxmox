@@ -1,0 +1,6 @@
+{
+  "proxmox.node": {
+    "color": "tomato",
+    "extends": "object"
+  }
+}

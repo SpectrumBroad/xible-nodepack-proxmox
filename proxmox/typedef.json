@@ -1,0 +1,6 @@
+{
+  "proxmox": {
+    "color": "darkorange",
+    "extends": "object"
+  }
+}
