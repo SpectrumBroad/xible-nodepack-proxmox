@@ -1,28 +1,24 @@
-module.exports = function(NODE) {
+'use strict';
 
-	let triggerIn = NODE.getInputByName('trigger');
-	let qemuIn = NODE.getInputByName('qemu');
+module.exports = (NODE) => {
+  const triggerIn = NODE.getInputByName('trigger');
+  const qemuIn = NODE.getInputByName('qemu');
 
-	let doneOut = NODE.getOutputByName('done');
+  const doneOut = NODE.getOutputByName('done');
 
-	triggerIn.on('trigger', (conn, state) => {
-
-		qemuIn.getValues(state).then((qemus) => {
-
-			Promise.all(qemus.map((qemu) => qemu.clone({
-					newVmId: NODE.data.newVmId,
-					newName: NODE.data.newName,
-					full: NODE.data.full ? true : false
-				})))
-				.then(() => {
-					doneOut.trigger(state);
-				})
-				.catch((err) => {
-					NODE.error(err, state);
-				});
-
-		});
-
-	});
-
+  triggerIn.on('trigger', (conn, state) => {
+    qemuIn.getValues(state).then((qemus) => {
+      Promise.all(qemus.map(qemu => qemu.clone({
+        newVmId: NODE.data.newVmId,
+        newName: NODE.data.newName,
+        full: !!NODE.data.full
+      })))
+      .then(() => {
+        doneOut.trigger(state);
+      })
+      .catch((err) => {
+        NODE.error(err, state);
+      });
+    });
+  });
 };

@@ -1,11 +1,11 @@
 {
-	"name": "proxmox",
-	"type": "object",
-	"description": "Proxmox server.",
-	"outputs": {
-		"proxmox": {
-			"type": "proxmox"
-		}
-	},
-	"vault": ["username", "password", "hostname"]
+  "name": "proxmox",
+  "type": "object",
+  "description": "Proxmox server.",
+  "outputs": {
+    "proxmox": {
+      "type": "proxmox"
+    }
+  },
+  "vault": ["username", "password", "hostname"]
 }

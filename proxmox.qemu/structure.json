@@ -1,15 +1,15 @@
 {
-	"name": "proxmox.qemu",
-	"type": "object",
-	"description": "Proxmox QEMU instance or template.",
+  "name": "proxmox.qemu",
+  "type": "object",
+  "description": "Proxmox QEMU instance or template.",
   "inputs": {
     "node": {
       "type": "proxmox.node"
     }
   },
-	"outputs": {
-		"qemu": {
-			"type": "proxmox.qemu"
-		}
-	}
+  "outputs": {
+    "qemu": {
+      "type": "proxmox.qemu"
+    }
+  }
 }

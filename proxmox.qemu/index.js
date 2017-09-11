@@ -1,23 +1,20 @@
-module.exports = function(NODE) {
+'use strict';
 
-	let nodeIn = NODE.getInputByName('node');
+module.exports = (NODE) => {
+  const nodeIn = NODE.getInputByName('node');
 
-	let qemuOut = NODE.getOutputByName('qemu');
+  const qemuOut = NODE.getOutputByName('qemu');
 
-	qemuOut.on('trigger', (conn, state, callback) => {
-
-		nodeIn.getValues(state).then((nodes) => {
-
-			Promise.all(nodes
-					.filter((node) => !!node)
-					.map((node) => node.getQemuByVmId(NODE.data.vmId))
-				)
-				.then((qemus) => {
-					callback(qemus);
-				});
-
-		});
-
-	});
-
+  qemuOut.on('trigger', (conn, state, callback) => {
+    nodeIn.getValues(state)
+    .then((nodes) => {
+      Promise.all(nodes
+      .filter(node => !!node)
+      .map(node => node.getQemuByVmId(NODE.data.vmId))
+      )
+      .then((qemus) => {
+        callback(qemus);
+      });
+    });
+  });
 };

@@ -1,7 +1,7 @@
 {
-	"name": "proxmox.qemu.stop",
-	"type": "action",
-	"description": "Stops a proxmox QEMU node.",
+  "name": "proxmox.qemu.stop",
+  "type": "action",
+  "description": "Stops a proxmox QEMU node.",
   "inputs": {
     "trigger": {
       "type": "trigger"
@@ -10,9 +10,9 @@
       "type": "proxmox.qemu"
     }
   },
-	"outputs": {
-		"done": {
-			"type": "trigger"
-		}
-	}
+  "outputs": {
+    "done": {
+      "type": "trigger"
+    }
+  }
 }

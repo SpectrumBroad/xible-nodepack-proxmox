@@ -1,7 +1,7 @@
 {
-	"name": "proxmox.qemu.delete",
-	"type": "action",
-	"description": "Deletes a proxmox QEMU node or template.",
+  "name": "proxmox.qemu.delete",
+  "type": "action",
+  "description": "Deletes a proxmox QEMU node or template.",
   "inputs": {
     "trigger": {
       "type": "trigger"
@@ -10,9 +10,9 @@
       "type": "proxmox.qemu"
     }
   },
-	"outputs": {
-		"done": {
-			"type": "trigger"
-		}
-	}
+  "outputs": {
+    "done": {
+      "type": "trigger"
+    }
+  }
 }
