@@ -14,8 +14,11 @@
 	"keywords": [
 		"xible",
 		"proxmox",
-    "nodepack"
+		"nodepack"
 	],
+	"scripts": {
+		"prepublishOnly": "npm shrinkwrap --only=prod"
+	},
 	"dependencies": {
 		"proxmox-wrapper": "*"
 	}
