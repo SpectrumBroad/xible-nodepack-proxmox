@@ -8,7 +8,11 @@ module.exports = (NODE) => {
 
   triggerIn.on('trigger', async (conn, state) => {
     const nodes = await nodeIn.getValues(state);
-    await Promise.all(nodes.map(node => node.startAll()));
+    try {
+      await Promise.all(nodes.map(node => node.startAll()));
+    } catch (err) {
+      NODE.error(err, state);
+    }
 
     doneOut.trigger(state);
   });
