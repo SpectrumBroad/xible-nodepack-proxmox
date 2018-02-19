@@ -6,16 +6,13 @@ module.exports = (NODE) => {
 
   const doneOut = NODE.getOutputByName('done');
 
-  triggerIn.on('trigger', (conn, state) => {
-    qemuIn.getValues(state)
-    .then((qemus) => {
-      Promise.all(qemus.map(qemu => qemu.start()))
-      .then(() => {
-        doneOut.trigger(state);
-      })
-      .catch((err) => {
-        NODE.error(err, state);
-      });
-    });
+  triggerIn.on('trigger', async (conn, state) => {
+    const qemus = await qemuIn.getValues(state);
+    try {
+      await Promise.all(qemus.map(qemu => qemu.start()));
+      doneOut.trigger(state);
+    } catch (err) {
+      NODE.error(err, state);
+    }
   });
 };
