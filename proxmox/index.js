@@ -1,8 +1,7 @@
 'use strict';
 
 module.exports = (NODE) => {
-  // const ProxmoxWrapper = require('proxmox-wrapper');
-  const ProxmoxWrapper = require('/var/node/proxmox-wrapper');
+  const ProxmoxWrapper = require('proxmox-wrapper');
 
   let proxmox = null;
 
